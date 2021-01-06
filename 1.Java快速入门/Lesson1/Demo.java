@@ -1,9 +1,10 @@
+package Lesson1;
 import java.util.Arrays;
 
 // https://www.liaoxuefeng.com/wiki/1252599548343744/1259544070059520
 // http://hollischuang.gitee.io/tobetopjavaer/#/basics/object-oriented/polymorphism
 
-public class Lesson1 {
+public class Demo {
     public static void main(String[] args) {
         // name();
         // Demo.name();

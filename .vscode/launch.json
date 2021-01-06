@@ -5,33 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Java",
-            "type": "java",
-            "request": "launch",
-            "stopOnEntry": true,
-            "jdkPath": "${env:JAVA_HOME}/bin",
-            "cwd": "${fileDirname}",
-            "startupClass": "${fileBasenameNoExtension}",
-            "classpath": [
-                ".",
-                "${fileDirname}"
-            ]
-        },
-        {
-            "name": "Java Console App",
-            "type": "java",
-            "request": "launch",
-            "stopOnEntry": true,
-            "jdkPath": "${env:JAVA_HOME}/bin",
-            "cwd": "${fileDirname}",
-            "startupClass": "${fileBasenameNoExtension}",
-            "classpath": [
-                ".",
-                "${fileDirname}"
-            ],
-            "externalConsole": true
-        },
-        {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
@@ -41,8 +14,22 @@
             "type": "java",
             "name": "Launch Demo",
             "request": "launch",
-            "mainClass": "Demo",
-            "projectName": "JavaLanguage_660cd3d3"
+            "mainClass": "Lesson1.Demo",
+            "projectName": "JavaLanguage_bc399100"
+        },
+        {
+            "type": "java",
+            "name": "Launch Demo(1)",
+            "request": "launch",
+            "mainClass": "Lesson2.Demo",
+            "projectName": "JavaLanguage_bc399100"
+        },
+        {
+            "type": "java",
+            "name": "Launch Demo(2)",
+            "request": "launch",
+            "mainClass": "Lesson3.Demo",
+            "projectName": "JavaLanguage_bc399100"
         }
     ]
 }
