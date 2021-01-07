@@ -1,7 +1,7 @@
 package Lesson2;
+import Lesson2.Outer.Inner;
 import java.util.Arrays;
 
-import Lesson2.Outer.Inner;
 
 /*
     同个文件目录下，默认是同属于一个包，因此如果类名重复，就会出现错误。因此可以在文件头使用`package`解决名字冲突，修改文件完整名。
