@@ -15,13 +15,6 @@
             "type": "java",
             "name": "Launch Demo",
             "request": "launch",
-            "mainClass": "Lesson7.Demo",
-            "projectName": "JavaLanguage_660cd3d3"
-        },
-        {
-            "type": "java",
-            "name": "Launch Demo",
-            "request": "launch",
             "mainClass": "Demo",
             "projectName": "JavaLanguage_bc399100"
         },
@@ -78,6 +71,14 @@
             "name": "Launch Demo8",
             "request": "launch",
             "mainClass": "Lesson8.Demo",
+            "projectName": "JavaLanguage_bc399100"
+        }
+        ,
+        {
+            "type": "java",
+            "name": "Launch Demo11",
+            "request": "launch",
+            "mainClass": "Lesson11.Demo",
             "projectName": "JavaLanguage_bc399100"
         }
     ]
