@@ -56,3 +56,9 @@ User login(String name, String pass) {
     ...
 }
 ```
+
+## JDBC更新
+
+
+## JDBC事务
+
