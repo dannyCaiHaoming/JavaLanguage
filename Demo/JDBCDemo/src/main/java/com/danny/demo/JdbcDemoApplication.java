@@ -24,8 +24,16 @@ import java.util.List;
 public class JdbcDemoApplication {
 
 	public static void main(String[] args) throws Exception {
+
+		/*
+		查找
+		 */
 		List<Student> students = queryStudents();
 		System.out.println(students);
+		/*
+		增加
+		 */
+//		insertStudent();
 	}
 
 	static List<Student> queryStudents() throws SQLException {
@@ -44,6 +52,24 @@ public class JdbcDemoApplication {
 			}
 		}
 		return students;
+	}
+
+	static int insertStudent() throws SQLException {
+
+		try (Connection connection = DriverManager.getConnection(jdbcUrl,jdbcUsername,jdbcPassword)) {
+			try (PreparedStatement ps = connection.
+					prepareStatement("INSERT INTO students (id,grade,name,gender,score) VALUES (?,?,?,?,?)")) {
+				ps.setObject(1,999);
+				ps.setObject(2,1);
+				ps.setObject(3,"Bob");
+				ps.setObject(4,1);
+				ps.setObject(5,95);
+				int result = ps.executeUpdate();
+				System.out.println(result == 1 ? "Insert Succes" : "Insert fail");
+				return result;
+			}
+		}
+
 	}
 
 
