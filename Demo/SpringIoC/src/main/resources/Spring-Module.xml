@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--        https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--<bean id="factory1" class="com.danny.SpringIoC.Factory1"></bean>-->
+
+<!--<bean id="person" class="com.danny.SpringIoC.Person" factory-bean="factory1" factory-method="getPerson"></bean>-->
+
+<!--</beans>-->
+
+<!--
+【xmlns】：  XML name space 缩写
+【xmlns:xsi】： XML schema instance ，（XSD文件，XML Schema Definition文件命名空间，用来定义XML文档结构），所以这个东西就是用来声明
+提供xml文档结构定义的实例。
+【xmlns:schemeLocation】： 【"键" "值"】，前面的为命名空间，后面的为XSD文件位置
+-->
