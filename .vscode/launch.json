@@ -6,6 +6,24 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Lesson",
+            "request": "launch",
+            "mainClass": "Lesson16.Lesson"
+        },
+        {
+            "type": "java",
+            "name": "Launch Lesson16",
+            "request": "launch",
+            "mainClass": "Lesson16.Lesson16"
+        },
+        {
+            "type": "java",
+            "name": "Launch Demo",
+            "request": "launch",
+            "mainClass": "Lesson16.Demo"
+        },
+        {
+            "type": "java",
             "name": "Launch Demo",
             "request": "launch",
             "mainClass": "Lesson3.Demo"
@@ -84,6 +102,13 @@
             "name": "Launch Demo11",
             "request": "launch",
             "mainClass": "Lesson11.Demo",
+            "projectName": "JavaLanguage_bc399100"
+        },
+        {
+            "type": "java",
+            "name": "Launch Demo16",
+            "request": "launch",
+            "mainClass": "Lesson16.Demo",
             "projectName": "JavaLanguage_bc399100"
         }
     ]

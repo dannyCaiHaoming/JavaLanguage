@@ -10,4 +10,18 @@
 
     <bean id="mailService"
           class="com.danny.SpringIoCLearning.service.MailService" />
+
+    <bean id="userDao" class="com.danny.SpringIoCLearning.service.AOP.UserDao">
+
+    </bean>
+
+    <bean id="AOP" class="com.danny.SpringIoCLearning.service.AOP.AOP">
+
+    </bean>
+
+    <bean id="proxy" class="com.danny.SpringIoCLearning.service.AOP.ProxyFactory2" factory-method="getProxyInstance">
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg index="1" ref="AOP"/>
+    </bean>
+
 </beans>
