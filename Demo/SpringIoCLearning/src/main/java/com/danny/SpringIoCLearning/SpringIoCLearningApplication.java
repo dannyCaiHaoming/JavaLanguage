@@ -1,5 +1,6 @@
 package com.danny.SpringIoCLearning;
 
+import com.danny.SpringIoCLearning.service.AOP.IUser;
 import com.danny.SpringIoCLearning.service.AOP.UserDao;
 import com.danny.SpringIoCLearning.service.MailService;
 import com.danny.SpringIoCLearning.service.Test.*;
@@ -47,7 +48,7 @@ public class SpringIoCLearningApplication {
 
         /* AOP使用 */
         ApplicationContext cx = new ClassPathXmlApplicationContext("application.xml");
-        UserDao user = (UserDao)cx.getBean("proxy");
+        IUser user = (IUser)cx.getBean("proxy");
         user.save();
 
     }
