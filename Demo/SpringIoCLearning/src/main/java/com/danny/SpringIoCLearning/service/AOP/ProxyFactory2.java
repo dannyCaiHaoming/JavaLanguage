@@ -11,18 +11,31 @@ public class ProxyFactory2 {
 
     public static Object getProxyInstance(Object target_,AOP aop_){
         target = target_;
-        aop_ = aop_;
+        aop = aop_;
         return Proxy.newProxyInstance(target_.getClass().getClassLoader(),
                 target_.getClass().getInterfaces(),
                 new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         aop.begin();
-                        Object returnValue = method.invoke(proxy,args);
+                        Object returnValue = method.invoke(target,args);
                         aop.close();
                         return null;
                     }
                 });
+    }
+
+    public Object getProxyInstance(final Object target_, final AOP aop_){
+        return Proxy.newProxyInstance(target_.getClass().getClassLoader(),
+                target_.getClass().getInterfaces(),
+                new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        aop_.begin();
+                        Object returnValue = method.invoke(pro)
+                        return null;
+                    }
+                })
     }
 
 }
