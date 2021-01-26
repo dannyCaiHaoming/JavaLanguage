@@ -1,9 +1,10 @@
 package com.danny.SpringIoCLearning.service.AOP;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
-public class UserDao {
+@Repository
+public class UserDao implements IUser{
+    @Override
     public void save(){
         System.out.println("DB:保存用户");
     }

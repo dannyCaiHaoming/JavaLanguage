@@ -59,6 +59,20 @@ User login(String name, String pass) {
 
 ## JDBC更新
 
+数据库的操作：增删改查(`CRUD`),
+- `Create`
+- `Retrieve`
+- `Update`
+- `Delete`
+
+
+### 插入---`INSERT`
+
+```
+///方式一：  手动输入主键
+"INSERT INTO students (id,grade,name,gender,score) VALUES (?,?,?,?,?)"
+///方式二:  通过`executeUpdate()`获取
+```
 
 ## JDBC事务
 
