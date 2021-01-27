@@ -1,6 +1,7 @@
 package com.danny.SpringIoCLearning;
 
 import com.danny.SpringIoCLearning.service.AOP.IUser;
+import com.danny.SpringIoCLearning.service.AOP.OrderDao;
 import com.danny.SpringIoCLearning.service.AOP.UserDao;
 import com.danny.SpringIoCLearning.service.MailService;
 import com.danny.SpringIoCLearning.service.Test.*;
@@ -47,9 +48,21 @@ public class SpringIoCLearningApplication {
 //        proxy.save();
 
         /* AOP使用 */
+//        ApplicationContext cx = new ClassPathXmlApplicationContext("application.xml");
+//        IUser user = (IUser)cx.getBean("proxy");
+//        user.save();
+
         ApplicationContext cx = new ClassPathXmlApplicationContext("application.xml");
-        IUser user = (IUser)cx.getBean("proxy");
-        user.save();
+//        IUser user = (IUser)cx.getBean("IUser");
+//        user.save();
+
+        IUser iUser = (IUser)cx.getBean("userDao");
+        System.out.println(iUser.getClass());
+        iUser.save();
+
+        OrderDao orderDao = (OrderDao)cx.getBean("orderDao");
+        System.out.println(orderDao.getClass());
+        orderDao.save();
 
     }
 
