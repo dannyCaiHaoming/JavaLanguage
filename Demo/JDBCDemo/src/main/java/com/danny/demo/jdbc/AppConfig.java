@@ -5,6 +5,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -18,8 +19,17 @@ public class AppConfig {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         UserService1 userService1 = context.getBean(UserService1.class);
-        userService1.
-
+        userService1.register("bob@gmail.com","bob","bob");
+        userService1.register("alice@gmail.com","alice","alice");
+        User bob = userService1.getUserByName("bob");
+        System.out.println(bob);
+        User tom = userService1.register("tom@gmail.com","tom","tom");
+        System.out.println(tom);
+        System.out.println("Total :" + userService1.getUsers());
+        for (User u : userService1.getUsers(1)) {
+            System.out.println(u);
+        }
+        ((ConfigurableApplicationContext) context).close();
     }
 
     @Value("${jdbc.url}")
