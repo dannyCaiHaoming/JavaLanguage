@@ -13,6 +13,6 @@ public interface BookDao {
 
     List<Book> queryAll(@Param("offset") int offset, @Param("limit") int limit);
 
-    int reduceNumber(long bookId);
+    int reduceNumber(@Param("bookId") long bookId);
     
 }

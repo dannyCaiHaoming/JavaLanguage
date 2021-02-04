@@ -4,10 +4,10 @@ package com.danny.BookStore;
 //import org.springframework.boot.test.context.SpringBootTest;
 //
 //@SpringBootTest
-//class BookStoreApplicationTests {
-//
+class BookStoreApplicationTests {
+
 //    @Test
-//    void contextLoads() {
-//    }
-//
-//}
+    void contextLoads() {
+    }
+
+}

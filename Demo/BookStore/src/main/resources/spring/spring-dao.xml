@@ -9,15 +9,16 @@
 
 <!--配置整合mybatis过程-->
 <!--    配置数据库相关参数properties的属性  ${url} -->
-<context:property-placeholder location="classpath:jdbc.propertis" />
+<context:property-placeholder location="classpath:jdbc.properties" />
+
 
 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 
 <!--    配置-->
     <property name="driverClass" value="${jdbc.driver}" />
-    <property name="jdbcUrl" value="${jdvc.url}" />
+    <property name="jdbcUrl" value="${jdbc.url}" />
     <property name="user" value="${jdbc.username}" />
-    <property name="password" value="${jdbc.passwod}" />
+    <property name="password" value="${jdbc.password}" />
 
 <!--    c3p0连接池私有属性-->
     <property name="maxPoolSize" value="30" />
@@ -47,11 +48,11 @@
 </bean>
 
 <!--    配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中-->
-<bean id="org.mybatis.spring.mapper.MapperScannerConfigurer">
-<!--    注入sqlSessionFactoryBeanName-->
-    <property name="sqlSessionFactoryBeanName" value="sqlSessionFacotry"/>
-<!--    给出需要扫描Dao接口包-->
-    <property name="basePackage" value="com.danny.BookStore.dao"/>
-</bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 注入sqlSessionFactory -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <!-- 给出需要扫描Dao接口包 -->
+        <property name="basePackage" value="com.danny.BookStore.dao" />
+    </bean>
 
 </beans>

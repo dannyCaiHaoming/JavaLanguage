@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class Appoitment {
+public class Appointment {
 
     private long bookId;
 
