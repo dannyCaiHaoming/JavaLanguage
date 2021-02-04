@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.*;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +18,14 @@ import java.util.List;
 import java.sql.ResultSet;
 
 @Component
+@Transactional
 public class  UserService1 {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    PlatformTransactionManager txManager;
 
     public User register(String email, String password, String name) {
         KeyHolder holder = new GeneratedKeyHolder();
@@ -80,6 +86,17 @@ public class  UserService1 {
                 }
             }
         });
+    }
+
+    public User fetchUserByEmail(String email){
+        List<User> users = jdbcTemplate.query("SELECT * FROM users WHERE email = ?",new Object[] {email},(ResultSet rs, int rowNum) -> {
+            return new User( // new User object:
+                    rs.getLong("id"), // id
+                    rs.getString("email"), // email
+                    rs.getString("password"), // password
+                    rs.getString("name")); // name
+        });
+        return users.isEmpty() ? null : users.get(0);
     }
 
     public long getUsers(){
