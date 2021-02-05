@@ -1,3 +1,9 @@
+
+CREATE DATABASE bookstore;
+
+
+Use bookstore;
+
 -- 创建图书表
 CREATE TABLE `book` (
   `book_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '图书ID',
@@ -23,3 +29,5 @@ CREATE TABLE `appointment` (
   PRIMARY KEY (`book_id`, `student_id`),
   INDEX `idx_appoint_time` (`appoint_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='预约图书表';
+
+

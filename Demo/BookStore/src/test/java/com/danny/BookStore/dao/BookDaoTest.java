@@ -1,5 +1,6 @@
 package com.danny.BookStore.dao;
 
+import com.danny.BookStore.AppConfig;
 import com.danny.BookStore.BaseTest;
 import com.danny.BookStore.dao.BookDao;
 import com.danny.BookStore.entity.Book;
@@ -10,13 +11,18 @@ import java.util.List;
 
 public class BookDaoTest extends BaseTest {
     @Autowired
-    private BookDao bookDao;
+    BookDao bookDao;
+
+    @Autowired
+    AppConfig appConfig;
 
     @Test
     public void testQueryById() throws Exception {
-        long bookId = 1000;
-        Book book = bookDao.queryById(bookId);
-        System.out.println(book);
+//        long bookId = 1000;
+//        Book book = bookDao.queryById(bookId);
+//        System.out.println(book);
+
+        System.out.println(appConfig);
     }
 
     @Test
