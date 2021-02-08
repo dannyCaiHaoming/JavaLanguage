@@ -33,7 +33,7 @@ public class AppConfig {
 
     @Bean
     DataSource createDataSource(@Value("${jdbc.url}") String jdbcUrl,
-                                @Value("${jdbc.username}") String jdbcUsername, 
+                                @Value("${jdbc.username}") String jdbcUsername,
                                 @Value("${jdbc.password}") String jdbcPassword,
                                 @Value("${jdbc.driver}") String jdbcDriverclass
     ) throws Exception {
