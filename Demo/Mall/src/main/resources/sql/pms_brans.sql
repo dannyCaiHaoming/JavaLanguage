@@ -1,6 +1,6 @@
 
 
-CREATE DATABASE mall;
+CREATE DATABASE IF NOT EXISTS mall;
 
 
 Use mall;
