@@ -26,7 +26,7 @@ public class AdminUserDetails implements UserDetails {
         return permissionList.stream()
                 .filter(permission -> permission.getValue() != null)
                 .map(permission -> new SimpleGrantedAuthority(permission.getValue()))
-                .collect(Collectors.toCollection(Collectors.toList()));
+                .collect(Collectors.toList());
     }
 
     @Override
