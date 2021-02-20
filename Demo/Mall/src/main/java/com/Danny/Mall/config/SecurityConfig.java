@@ -62,8 +62,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.OPTIONS)
                 .permitAll()
-//                .antMatchers("/**")//测试是全部运行访问
-//                .permitAll()
+                .antMatchers("/**")//测试是全部运行访问
+                .permitAll()
                 .anyRequest()//除上面外的所有请求全部需要鉴权认证
                 .authenticated();
 

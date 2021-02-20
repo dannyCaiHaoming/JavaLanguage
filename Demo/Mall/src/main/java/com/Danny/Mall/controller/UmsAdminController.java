@@ -32,6 +32,13 @@ public class UmsAdminController {
     @Value("${jwt.tokenHead}")
     private String tokenHead;
 
+
+    @GetMapping(value = "/hello")
+    @ResponseBody
+    public CommonResult Hello(){
+        return CommonResult.success("Hello");
+    }
+
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
@@ -47,8 +54,7 @@ public class UmsAdminController {
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult login(@RequestBody UmsAdmin umsAdmin,
-                              UmsAdminLoginParam umsAdminLoginParam,
+    public CommonResult login(@RequestBody UmsAdminLoginParam umsAdminLoginParam,
                               BindingResult bindingResult) {
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
